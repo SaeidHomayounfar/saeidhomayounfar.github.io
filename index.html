@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saeid Homayounfar</title>
+<meta name="description" content="Saeid Homayounfar – medical engineer working at the intersection of user research, data analytics and product innovation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfaf8;
+    --surface: #ffffff;
+    --text: #1d232b;
+    --muted: #5b6573;
+    --accent: #2e6b9e;
+    --accent-soft: #e6eff7;
+    --rule: #a6cceb;
+    --border: #e4e7eb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12161b;
+      --surface: #1a2027;
+      --text: #e7ebef;
+      --muted: #9aa5b1;
+      --accent: #7fb3de;
+      --accent-soft: #1f2c39;
+      --rule: #34536e;
+      --border: #2a323c;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12161b; --surface: #1a2027; --text: #e7ebef; --muted: #9aa5b1;
+    --accent: #7fb3de; --accent-soft: #1f2c39; --rule: #34536e; --border: #2a323c;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 16.5px;
+    line-height: 1.65;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+
+  /* Navigation */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 16px; }
+  nav .brand { font-family: "Source Serif 4", Georgia, serif; font-weight: 600; color: var(--text); font-size: 1.1rem; white-space: nowrap; }
+  nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; overflow-x: auto; }
+  nav ul a { color: var(--muted); font-size: 0.92rem; font-weight: 500; white-space: nowrap; }
+  nav ul a:hover { color: var(--accent); text-decoration: none; }
+
+  /* Hero */
+  header.hero { padding: 72px 0 48px; }
+  .hero-inner { display: flex; gap: 32px; align-items: center; }
+  .monogram {
+    flex: 0 0 auto; width: 112px; height: 112px; border-radius: 50%;
+    background: var(--accent-soft); color: var(--accent);
+    display: grid; place-items: center;
+    font-family: "Source Serif 4", Georgia, serif; font-size: 2.6rem; font-weight: 600;
+    border: 2px solid var(--rule);
+    overflow: hidden;
+  }
+  .monogram img { width: 100%; height: 100%; object-fit: cover; }
+  h1 {
+    font-family: "Source Serif 4", Georgia, serif; font-weight: 600;
+    font-size: clamp(2.1rem, 5vw, 2.9rem); line-height: 1.15; margin: 0 0 10px; color: var(--accent);
+  }
+  .tagline { font-size: 1.15rem; color: var(--text); margin: 0 0 14px; max-width: 600px; }
+  .meta { color: var(--muted); font-size: 0.95rem; margin: 0 0 22px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-block; padding: 9px 18px; border-radius: 8px; font-weight: 500; font-size: 0.95rem;
+    border: 1px solid var(--accent); color: var(--accent); background: transparent;
+  }
+  .btn.primary { background: var(--accent); color: #fff; }
+  :root[data-theme="dark"] .btn.primary { color: #12161b; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn.primary { color: #12161b; } }
+  .btn:hover { text-decoration: none; opacity: 0.9; }
+
+  /* Sections */
+  section { padding: 36px 0 20px; scroll-margin-top: 64px; }
+  h2 {
+    font-family: "Source Serif 4", Georgia, serif; font-weight: 600; font-size: 1.6rem;
+    color: var(--accent); margin: 0 0 6px; letter-spacing: 0.01em;
+  }
+  .rule { height: 2px; background: var(--rule); border: 0; margin: 0 0 24px; }
+  p { margin: 0 0 14px; }
+
+  /* Interests */
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .chip { background: var(--accent-soft); color: var(--accent); padding: 5px 12px; border-radius: 999px; font-size: 0.88rem; font-weight: 500; }
+
+  /* Projects */
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 22px;
+    display: flex; flex-direction: column;
+  }
+  .card .kicker { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 600; margin-bottom: 6px; }
+  .card h3 { font-family: "Source Serif 4", Georgia, serif; font-size: 1.2rem; margin: 0 0 10px; line-height: 1.3; }
+  .card p { font-size: 0.95rem; color: var(--text); }
+  .card .link { margin-top: auto; font-weight: 500; font-size: 0.95rem; }
+  .stat { font-family: "Source Serif 4", Georgia, serif; font-size: 1.9rem; color: var(--accent); font-weight: 600; line-height: 1; margin: 4px 0 10px; }
+
+  /* Timeline */
+  .item { display: grid; grid-template-columns: 170px 1fr; gap: 20px; padding: 0 0 26px; }
+  .item .when { color: var(--muted); font-size: 0.92rem; padding-top: 2px; }
+  .item h3 { font-size: 1.05rem; margin: 0; font-weight: 600; }
+  .item .where { color: var(--muted); font-size: 0.95rem; margin: 2px 0 8px; }
+  .item ul { margin: 0; padding-left: 18px; }
+  .item li { margin-bottom: 4px; font-size: 0.97rem; }
+
+  /* Lists */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 32px; }
+  .plain { list-style: none; padding: 0; margin: 0; }
+  .plain li { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.97rem; }
+  .plain li span { color: var(--muted); display: block; font-size: 0.88rem; }
+
+  .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .skills div h3 { font-size: 0.98rem; margin: 0 0 6px; }
+  .skills div p { color: var(--muted); font-size: 0.95rem; margin: 0; }
+
+  footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 28px 0 40px; color: var(--muted); font-size: 0.9rem; }
+  .contact-box {
+    background: var(--accent-soft); border-radius: 12px; padding: 26px; text-align: center;
+  }
+  .contact-box p { margin-bottom: 16px; }
+  .contact-box .buttons { justify-content: center; }
+
+  @media (max-width: 680px) {
+    header.hero { padding: 44px 0 32px; }
+    .hero-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .monogram { width: 88px; height: 88px; font-size: 2rem; }
+    .grid, .two-col, .skills { grid-template-columns: 1fr; }
+    .item { grid-template-columns: 1fr; gap: 4px; }
+    nav ul { gap: 12px; }
+    nav ul a { font-size: 0.82rem; }
+    nav .brand { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Saeid Homayounfar</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-inner">
+    <!-- To add a photo: upload photo.jpg to the repository and replace "SH" with <img src="photo.jpg" alt="Saeid Homayounfar"> -->
+    <div class="monogram" aria-hidden="true">SH</div>
+    <div>
+      <h1>Saeid Homayounfar</h1>
+      <p class="tagline">Medical engineer working at the intersection of user research, data analytics, and product innovation.</p>
+      <p class="meta">M.Sc. FAU Erlangen-Nürnberg &nbsp;·&nbsp; Based in Nuremberg, Germany</p>
+      <div class="buttons">
+        <a class="btn primary" href="mailto:saeid.homayounfar@fau.de">Email me</a>
+        <a class="btn" href="#projects">See my work</a>
+        <!-- To add LinkedIn: <a class="btn" href="YOUR-LINKEDIN-URL">LinkedIn</a> -->
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="about">
+    <h2>About</h2>
+    <hr class="rule">
+    <p>My path started with medical devices. During my B.Sc. in Biomedical Engineering at Amirkabir University of Technology, I designed and built a light-curing device using Arduino, and for four years I worked at Diplomat Dental on new dental and medical devices together with international manufacturers. There I learned that a device is only as good as the experience people have with it.</p>
+    <p>At FAU Erlangen-Nürnberg, this interest moved from devices to digital products. I completed my M.Sc. in Medical Engineering with a specialization in data analytics and entrepreneurship, and for two and a half years I worked on user research and data analysis for QDAcity, a qualitative data analysis tool. My master's thesis (grade 1.3) analyzed about 1.6 million user interaction records to understand why users stay with a product or leave it.</p>
+    <p>Today I am interested in how people experience and adopt new technologies, and how empirical research can make products more useful and more human.</p>
+    <div class="chips">
+      <span class="chip">User research</span>
+      <span class="chip">Human-computer interaction</span>
+      <span class="chip">Consumer behavior</span>
+      <span class="chip">Product innovation</span>
+      <span class="chip">Physical prototyping</span>
+      <span class="chip">Digital health</span>
+      <span class="chip">Entrepreneurship</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Selected Projects</h2>
+    <hr class="rule">
+    <div class="grid">
+      <article class="card">
+        <div class="kicker">Master's thesis · FAU · Grade 1.3</div>
+        <h3>Data Analysis of User Retention Drivers</h3>
+        <div class="stat">1.6M</div>
+        <p>Analyzed about 1.6 million user interaction records of QDAcity to identify what drives users to activate, stay, or leave, including team collaboration, device type, and demo use. Users who worked together in teams behaved very differently from those who worked alone.</p>
+      </article>
+      <article class="card">
+        <div class="kicker">Bachelor's thesis · Physical prototyping</div>
+        <h3>Light-Curing Device Using Arduino</h3>
+        <p>Designed and built a working light-curing device for dental use, from the electronics and Arduino programming to testing the final prototype.</p>
+        <p style="color:var(--muted);font-size:0.9rem;">The video narration is in Persian, but the prototype and how it works are clearly visible. More details in English on request.</p>
+        <a class="link" href="https://drive.google.com/file/d/1NwV5EEY1CTjjMpdm9RUXZecICgZpOGhG/view" target="_blank" rel="noopener">Watch the prototype video →</a>
+      </article>
+      <article class="card">
+        <div class="kicker">User research · QDAcity</div>
+        <h3>Improving a Qualitative Data Analysis Tool</h3>
+        <p>Designed and ran online user surveys, collected feedback on users' needs and problems, combined it with real usage data, and turned the results into suggestions to improve the user interface, user experience, and marketing of the tool.</p>
+      </article>
+      <article class="card">
+        <div class="kicker">Product development · Diplomat Dental</div>
+        <h3>User-Centered Dental and Medical Devices</h3>
+        <p>Worked with international manufacturers on new dental and medical devices, collected feedback from dentists on usability and handling, prepared business plans and market research for new products, and presented devices at exhibitions and trade fairs.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <hr class="rule">
+    <div class="item">
+      <div class="when">Apr 2024 – Sep 2026</div>
+      <div>
+        <h3>Student Research Assistant (Digital Marketer and Data Analyst)</h3>
+        <div class="where">FAU Erlangen-Nürnberg · QDAcity · Erlangen, Germany</div>
+        <ul>
+          <li>Worked for QDAcity, a cloud-based qualitative data analysis (QDA) tool and competitor of MAXQDA.</li>
+          <li>Designed and ran online user surveys and analyzed user interaction data in Google BigQuery using SQL.</li>
+          <li>Identified drivers of user activation and churn and turned them into product and marketing recommendations.</li>
+          <li>Developed and ran digital marketing campaigns (SEO, Google Ads, social media, content).</li>
+        </ul>
+      </div>
+    </div>
+    <div class="item">
+      <div class="when">Jul 2019 – Jul 2023</div>
+      <div>
+        <h3>Business Developer and R&amp;D Assistant</h3>
+        <div class="where">Diplomat Dental · Tehran, Iran</div>
+        <ul>
+          <li>Contributed to the development of new dental and medical devices with international manufacturers.</li>
+          <li>Conducted market research and competitor analysis and prepared business plans for new products.</li>
+          <li>Collected feedback from dentists and turned it into suggestions to make devices easier to use.</li>
+          <li>Organized exhibitions and trade fairs and coordinated international partners and customers.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="item">
+      <div class="when">Feb 2022 – Jun 2023</div>
+      <div>
+        <h3>Teaching Assistant</h3>
+        <div class="where">Amirkabir University of Technology · Tehran, Iran</div>
+        <ul>
+          <li>Research Methods and Scientific Writing (Dr. Gholamreza Rouhi)</li>
+          <li>Statistics and Probability (Dr. Mehrdad Saviz)</li>
+          <li>Game Theory (Dr. Mahsa Jahandideh)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <hr class="rule">
+    <div class="item">
+      <div class="when">Oct 2023 – Sep 2026</div>
+      <div>
+        <h3>M.Sc. in Medical Engineering</h3>
+        <div class="where">Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU), Germany</div>
+        <ul>
+          <li>Specialization in Data Analytics and Entrepreneurship</li>
+          <li>Master's thesis: Data Analysis of User Retention Drivers (grade 1.3)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="item">
+      <div class="when">Jun 2025 – Jul 2025</div>
+      <div>
+        <h3>Summer School in International Business, Management, and Entrepreneurship</h3>
+        <div class="where">Sungkyunkwan University · Seoul, South Korea</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="when">2018 – 2023</div>
+      <div>
+        <h3>B.Sc. in Biomedical Engineering</h3>
+        <div class="where">Amirkabir University of Technology (Tehran Polytechnic), Iran</div>
+        <ul>
+          <li>Bachelor's thesis: Design and Manufacturing of a Light-Curing Device Using Arduino</li>
+          <li>Selected courses: Econometrics, Microeconomics, Macroeconomics, Game Theory</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <hr class="rule">
+    <div class="skills">
+      <div>
+        <h3>Research</h3>
+        <p>User research, online surveys, qualitative and quantitative analysis, statistics, usage data analysis</p>
+      </div>
+      <div>
+        <h3>Data and Tools</h3>
+        <p>SQL (Google BigQuery), R, Python, Power BI, Looker Studio, Stata, Microsoft Office, LaTeX</p>
+      </div>
+      <div>
+        <h3>Engineering and Prototyping</h3>
+        <p>Arduino, physical computing, electronics, LTspice, MATLAB, Simulink, medical and dental devices</p>
+      </div>
+      <div>
+        <h3>Business</h3>
+        <p>Business development, market research, digital marketing, project management, presentations</p>
+      </div>
+      <div>
+        <h3>Languages</h3>
+        <p>English (C1, fluent) · German (B1, ongoing courses) · Kurdish and Persian (native)</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="courses">
+    <h2>Courses and Awards</h2>
+    <hr class="rule">
+    <div class="two-col">
+      <ul class="plain">
+        <li>Digital Health and Well-Being<span>ZHAW, Switzerland · held by EELISA</span></li>
+        <li>Circular Economy and Sustainability Management<span>Scuola Superiore Sant'Anna, Pisa, Italy · held by EELISA</span></li>
+        <li>Fundamentals of Artificial Intelligence<span>Middle East Technical University, Turkey</span></li>
+        <li>Everything AI<span>UN House, Belgium</span></li>
+        <li>Foundations of Project Management<span>Google</span></li>
+      </ul>
+      <ul class="plain">
+        <li>Gold Medalist, German University Table Tennis Championships<span>Representing FAU</span></li>
+        <li>Top 2% of 150,000 participants<span>National University Entrance Exam (Physics &amp; Mathematics), Iran</span></li>
+        <li>Supervised Machine Learning: Regression and Classification<span>DeepLearning.AI, Stanford University</span></li>
+        <li>Python Data Structures<span>University of Michigan</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <hr class="rule">
+    <div class="contact-box">
+      <p>I am open to PhD and research positions as well as roles in user research, product innovation, and business development in medical technology.</p>
+      <div class="buttons">
+        <a class="btn primary" href="mailto:saeid.homayounfar@fau.de">saeid.homayounfar@fau.de</a>
+        <a class="btn" href="mailto:m.saeid.homayounfar@gmail.com">m.saeid.homayounfar@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Saeid Homayounfar · Nuremberg, Germany</div>
+</footer>
+
+</body>
+</html>
