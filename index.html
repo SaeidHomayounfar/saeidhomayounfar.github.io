@@ -78,14 +78,15 @@
   /* Landing */
   .hero { padding: 72px 0 36px; }
   .hero-inner { display: flex; gap: 36px; align-items: center; }
-  .monogram {
-    flex: 0 0 auto; width: 190px; height: 190px; border-radius: 50%;
-    background: var(--accent); color: var(--on-accent);
-    display: grid; place-items: center;
-    font-family: var(--font-display); font-size: 2.8rem; font-weight: 600; letter-spacing: 0.02em;
-    box-shadow: 0 0 0 9px color-mix(in srgb, var(--accent) 38%, var(--bg)); overflow: hidden;
+  /* Portrait: circle with a thin ring; the head rises above the circle's top edge */
+  .portrait { position: relative; flex: 0 0 auto; width: 190px; height: 190px; margin-top: 34px; }
+  .portrait .disc {
+    position: absolute; inset: 0; border-radius: 50%;
+    background: radial-gradient(circle at 50% 36%, #ffffff 0%, #c9d6e2 55%, #7a99b5 100%);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 38%, var(--bg));
   }
-  .monogram img { width: 100%; height: 100%; object-fit: cover; }
+  .portrait .clip { position: absolute; inset: 0; clip-path: inset(-60% 0 0 0 round 0 0 50% 50%); }
+  .portrait .cut { position: absolute; bottom: 0; left: -10%; width: 120%; height: auto; display: block; }
   h1 { font-size: clamp(2.3rem, 6vw, 3.2rem); line-height: 1.05; margin: 0 0 12px; color: var(--accent); letter-spacing: -0.01em; }
   h1 .first { font-weight: 600; }
   h1 .last { font-weight: 300; }
@@ -212,7 +213,7 @@
   @media (max-width: 720px) {
     .hero { padding: 44px 0 24px; }
     .hero-inner { flex-direction: column; align-items: flex-start; gap: 22px; }
-    .monogram { width: 140px; height: 140px; font-size: 2.1rem; }
+    .portrait { width: 140px; height: 140px; margin-top: 26px; }
     .grid, .two-col, .skills { grid-template-columns: 1fr; }
     .item { grid-template-columns: 1fr; gap: 4px; padding-left: 22px; }
     .menu .name { font-size: 1.35rem; }
@@ -240,7 +241,10 @@
   <div class="view" data-view="home">
     <header class="hero">
       <div class="wrap hero-inner">
-        <div class="monogram"><img src="photo.jpg" alt="Portrait of Saeid Homayounfar"></div>
+        <div class="portrait">
+          <div class="disc"></div>
+          <div class="clip"><img class="cut" src="photo-cutout.webp" alt="Portrait of Saeid Homayounfar"></div>
+        </div>
         <div>
           <h1><span class="first">Saeid</span> <span class="last">Homayounfar</span></h1>
           <p class="tagline">Medical engineer working at the intersection of user research, data analytics, and product innovation.</p>
