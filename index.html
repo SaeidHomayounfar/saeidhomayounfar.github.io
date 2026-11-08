@@ -85,8 +85,11 @@
     background: radial-gradient(circle at 50% 36%, #ffffff 0%, #c9d6e2 55%, #7a99b5 100%);
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 38%, var(--bg));
   }
+  /* The circle sits --lift higher than the photo, so the photo's bottom edge falls outside the frame */
+  .portrait { --lift: 4px; }
+  .portrait .disc, .portrait .clip { transform: translateY(calc(-1 * var(--lift))); }
   .portrait .clip { position: absolute; inset: 0; clip-path: inset(-60% 0 0 0 round 0 0 50% 50%); }
-  .portrait .cut { position: absolute; bottom: 0; left: -10%; width: 120%; height: auto; display: block; }
+  .portrait .cut { position: absolute; bottom: calc(-1 * var(--lift)); left: -10%; width: 120%; height: auto; display: block; }
   h1 { font-size: clamp(2.3rem, 6vw, 3.2rem); line-height: 1.05; margin: 0 0 12px; color: var(--accent); letter-spacing: -0.01em; }
   h1 .first { font-weight: 600; }
   h1 .last { font-weight: 300; }
@@ -213,7 +216,7 @@
   @media (max-width: 720px) {
     .hero { padding: 44px 0 24px; }
     .hero-inner { flex-direction: column; align-items: flex-start; gap: 22px; }
-    .portrait { width: 140px; height: 140px; margin-top: 26px; }
+    .portrait { width: 140px; height: 140px; margin-top: 26px; --lift: 3px; }
     .grid, .two-col, .skills { grid-template-columns: 1fr; }
     .item { grid-template-columns: 1fr; gap: 4px; padding-left: 22px; }
     .menu .name { font-size: 1.35rem; }
