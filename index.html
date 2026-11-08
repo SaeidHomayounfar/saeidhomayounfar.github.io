@@ -263,7 +263,8 @@
         <li><a href="#teaching"><span class="name">Teaching</span><span class="arrow" aria-hidden="true">→</span></a></li>
         <li><a href="#education"><span class="name">Education</span><span class="arrow" aria-hidden="true">→</span></a></li>
         <li><a href="#skills"><span class="name">Skills</span><span class="arrow" aria-hidden="true">→</span></a></li>
-        <li><a href="#courses"><span class="name">Courses and Awards</span><span class="arrow" aria-hidden="true">→</span></a></li>
+        <li><a href="#courses"><span class="name">Courses</span><span class="arrow" aria-hidden="true">→</span></a></li>
+        <li><a href="#awards"><span class="name">Awards</span><span class="arrow" aria-hidden="true">→</span></a></li>
         <li><a href="#contact"><span class="name">Contact</span><span class="arrow" aria-hidden="true">→</span></a></li>
       </ul>
     </div>
@@ -449,10 +450,10 @@
     </div>
   </div>
 
-  <!-- Courses and awards -->
+  <!-- Courses -->
   <div class="view" data-view="courses" hidden>
     <div class="wrap page">
-      <h2>Courses and Awards</h2>
+      <h2>Courses</h2>
       <hr class="rule">
       <div class="two-col">
         <ul class="plain">
@@ -460,15 +461,25 @@
           <li>Circular Economy and Sustainability Management<span>Scuola Superiore Sant'Anna, Pisa, Italy · held by EELISA</span></li>
           <li>Fundamentals of Artificial Intelligence<span>Middle East Technical University, Turkey</span></li>
           <li>Everything AI<span>UN House, Belgium</span></li>
-          <li>Foundations of Project Management<span>Google</span></li>
         </ul>
         <ul class="plain">
-          <li>Gold Medalist, German University Table Tennis Championships<span>Representing FAU</span></li>
-          <li>Top 2% of 150,000 participants<span>National University Entrance Exam (Physics &amp; Mathematics), Iran</span></li>
+          <li>Foundations of Project Management<span>Google</span></li>
           <li>Supervised Machine Learning: Regression and Classification<span>DeepLearning.AI, Stanford University</span></li>
           <li>Python Data Structures<span>University of Michigan</span></li>
         </ul>
       </div>
+    </div>
+  </div>
+
+  <!-- Awards -->
+  <div class="view" data-view="awards" hidden>
+    <div class="wrap page">
+      <h2>Awards</h2>
+      <hr class="rule">
+      <ul class="plain">
+        <li>Gold Medalist, German University Table Tennis Championships<span>Representing FAU</span></li>
+        <li>Top 2% of 150,000 participants<span>National University Entrance Exam (Physics &amp; Mathematics), Iran</span></li>
+      </ul>
     </div>
   </div>
 
@@ -524,7 +535,7 @@
     var views = [
       ["about", "About"], ["research", "Research and Projects"], ["experience", "Work Experience"],
       ["teaching", "Teaching"], ["education", "Education"], ["skills", "Skills"],
-      ["courses", "Courses and Awards"], ["contact", "Contact"]
+      ["courses", "Courses"], ["awards", "Awards"], ["contact", "Contact"]
     ];
     var ids = views.map(function (v) { return v[0]; });
     var more = document.getElementById("more");
