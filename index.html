@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Saeid Homayounfar</title>
-<meta name="description" content="Saeid Homayounfar – medical engineer working at the intersection of user research, data analytics and product innovation.">
+<meta name="description" content="Saeid Homayounfar – researcher and engineer working at the intersection of user research, data analytics, entrepreneurship and innovation.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Sans+3:wght@300;400;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -213,6 +213,10 @@
   footer .copy { color: var(--muted); font-size: 0.85rem; margin: 0; }
   .contact-box dd a { direction: ltr; unicode-bidi: isolate; }
 
+  /* Justified running text, no hyphenation */
+  .prose p, .card p, .item li, .skills p, .contact-box p, .tagline { text-align: justify; text-justify: inter-word; }
+  .card .note { text-align: justify; }
+
   @media (max-width: 720px) {
     .hero { padding: 44px 0 24px; }
     .hero-inner { flex-direction: column; align-items: flex-start; gap: 22px; }
@@ -259,7 +263,7 @@
         </div>
         <div>
           <h1><span class="first" data-i18n="first">Saeid</span> <span class="last" data-i18n="last">Homayounfar</span></h1>
-          <p class="tagline" data-i18n="tagline">Medical engineer working at the intersection of user research, data analytics, and product innovation.</p>
+          <p class="tagline" data-i18n="tagline">Researcher and engineer working at the intersection of user research, data analytics, entrepreneurship, and innovation.</p>
           <p class="meta" data-i18n="meta">M.Sc. FAU Erlangen-Nürnberg &nbsp;·&nbsp; Based in Nuremberg, Germany</p>
         </div>
       </div>
@@ -367,20 +371,7 @@
       <h2 data-i18n="nav_teaching">Teaching</h2>
       <hr class="rule">
       <div class="timeline">
-        <div class="item">
-          <div class="when" data-i18n="d_ta1">Feb 2022 – Jun 2023</div>
-          <div>
-            <h3 data-i18n="t1_title">Teaching Assistant, Research Methods and Scientific Writing</h3>
-            <div class="where" data-i18n="t_where">Amirkabir University of Technology · Tehran, Iran</div>
-            <ul>
-              <li data-i18n="t1_sup">Supervisor: Dr. Gholamreza Rouhi</li>
-              <li data-i18n="t1_b1">Prepared the assignments, the midterm exam and the final exam.</li>
-              <li data-i18n="t1_b2">Graded the assignments and the final presentations.</li>
-              <li data-i18n="t1_b3">Held tutorial sessions.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="item">
+                <div class="item">
           <div class="when" data-i18n="d_ta2">Sep 2022 – Feb 2023</div>
           <div>
             <h3 data-i18n="t2_title">Teaching Assistant, Statistics and Probability</h3>
@@ -404,7 +395,20 @@
           </div>
         </div>
       </div>
-    </div>
+    <div class="item">
+          <div class="when" data-i18n="d_ta1">Feb 2022 – Jun 2023</div>
+          <div>
+            <h3 data-i18n="t1_title">Teaching Assistant, Research Methods and Scientific Writing</h3>
+            <div class="where" data-i18n="t_where">Amirkabir University of Technology · Tehran, Iran</div>
+            <ul>
+              <li data-i18n="t1_sup">Supervisor: Dr. Gholamreza Rouhi</li>
+              <li data-i18n="t1_b1">Prepared the assignments, the midterm exam and the final exam.</li>
+              <li data-i18n="t1_b2">Graded the assignments and the final presentations.</li>
+              <li data-i18n="t1_b3">Held tutorial sessions.</li>
+            </ul>
+          </div>
+        </div>
+</div>
   </div>
 
   <!-- Education -->
@@ -561,7 +565,7 @@
     /* ---------- Translations. English is read from the page itself; German and Persian are listed here. ---------- */
     var DE = {
       first: "Saeid", last: "Homayounfar", photo_alt: "Porträt von Saeid Homayounfar",
-      tagline: "Medizintechnik-Ingenieur an der Schnittstelle von Nutzerforschung, Datenanalyse und Produktinnovation.",
+      tagline: "Forscher und Ingenieur an der Schnittstelle von Nutzerforschung, Datenanalyse, Entrepreneurship und Innovation.",
       meta: "M.Sc. FAU Erlangen-Nürnberg  ·  Wohnhaft in Nürnberg, Deutschland",
       nav_about: "Über mich", nav_research: "Forschung und Projekte", nav_experience: "Berufserfahrung", nav_teaching: "Lehre",
       nav_education: "Ausbildung", nav_skills: "Kenntnisse", nav_courses: "Kurse", nav_awards: "Auszeichnungen", nav_contact: "Kontakt",
@@ -620,12 +624,12 @@
       lbl_email: "E-Mail", lbl_phone: "Telefon", act_email: "E-Mail schreiben", act_linkedin: "Profil öffnen", act_phone: "Anrufen",
       copy: "Kopieren", copied: "Kopiert", copyfail: "Markieren und kopieren",
       copy_line: "© 2026 Saeid Homayounfar · Nürnberg, Deutschland",
-      meta_desc: "Saeid Homayounfar – Medizintechnik-Ingenieur an der Schnittstelle von Nutzerforschung, Datenanalyse und Produktinnovation."
+      meta_desc: "Saeid Homayounfar – Forscher und Ingenieur an der Schnittstelle von Nutzerforschung, Datenanalyse, Entrepreneurship und Innovation."
     };
 
     var FA = {
       first: "سعید", last: "همایون‌فر", photo_alt: "پرتره سعید همایون‌فر",
-      tagline: "مهندس پزشکی که در حوزه تلاقی پژوهش کاربرمحور، تحلیل داده و نوآوری در محصول فعالیت می‌کند.",
+      tagline: "پژوهشگر و مهندس در حوزه تلاقی پژوهش کاربر، تحلیل داده، کارآفرینی و نوآوری.",
       meta: "کارشناسی ارشد FAU اِرلانگن-نورنبرگ  ·  ساکن نورنبرگ، آلمان",
       nav_about: "درباره من", nav_research: "پژوهش و پروژه‌ها", nav_experience: "سوابق کاری", nav_teaching: "تدریس",
       nav_education: "تحصیلات", nav_skills: "مهارت‌ها", nav_courses: "دوره‌ها", nav_awards: "افتخارات", nav_contact: "تماس",
@@ -684,7 +688,7 @@
       lbl_email: "ایمیل", lbl_phone: "تلفن", act_email: "نوشتن ایمیل", act_linkedin: "باز کردن پروفایل", act_phone: "تماس",
       copy: "کپی", copied: "کپی شد", copyfail: "انتخاب و کپی",
       copy_line: "© 2026 سعید همایون‌فر · نورنبرگ، آلمان",
-      meta_desc: "سعید همایون‌فر – مهندس پزشکی در حوزه تلاقی پژوهش کاربر، تحلیل داده و نوآوری در محصول."
+      meta_desc: "سعید همایون‌فر – پژوهشگر و مهندس در حوزه تلاقی پژوهش کاربر، تحلیل داده، کارآفرینی و نوآوری."
     };
 
     /* English: collected from the page, plus the strings that only appear in script */
